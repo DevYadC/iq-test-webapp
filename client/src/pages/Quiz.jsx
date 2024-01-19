@@ -112,9 +112,10 @@ function Quiz() {
                     <div className={styles.quizContainerParent}>
 
                         <div className={styles.quizContainer} >
-
                             <div className={styles.timerContainer}>
+                                <div className={styles.questionPage}>{currQuestion + 1}|{quiz.questions.length}</div>
                                 <div className={styles.timer}>Time left: {Math.floor(time / 60)}:{('0' + time % 60).slice(-2)}</div>
+
                             </div>
 
                             <h3 className={styles.questionTitle}>{quiz.questions[currQuestion].question}</h3>
