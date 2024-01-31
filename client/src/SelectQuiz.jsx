@@ -13,7 +13,7 @@ export default function SelectQuiz() {
     useEffect(() => {
         const fetchProblemSets = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/problemsets');
+                const response = await fetch('https://iq-test-server-a6004f555e6a.herokuapp.com/api/problemsets');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }

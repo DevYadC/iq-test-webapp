@@ -3,7 +3,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const ProblemSet = require('./models/ProblemSets');
 const Score = require('./models/userScores');
-require('dotenv').config({ path: '../.env' });
+require('dotenv').config({ path: './.env' });
 const app = express();
 
 

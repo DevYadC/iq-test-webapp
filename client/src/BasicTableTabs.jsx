@@ -11,7 +11,7 @@ export default function TabsWrappedLabel({ quizzes, setScores }) {
 
     const fetchScore = async (event, newValue) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/scores/${newValue}`);
+            const response = await fetch(`https://iq-test-server-a6004f555e6a.herokuapp.com/${newValue}`);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }

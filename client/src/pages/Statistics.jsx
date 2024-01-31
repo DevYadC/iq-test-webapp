@@ -15,7 +15,7 @@ export default function () {
     useEffect(() => {
         const fetchScores = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/scores');
+                const response = await fetch('https://iq-test-server-a6004f555e6a.herokuapp.com/api/scores');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }

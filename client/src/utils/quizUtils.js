@@ -2,7 +2,7 @@
 
 export const fetchQuiz = async (quizId, setQuiz) => {
     try {
-        const response = await fetch(`http://localhost:5000/api/problemsets/${quizId}`);
+        const response = await fetch(`https://iq-test-server-a6004f555e6a.herokuapp.com/api/problemsets/${quizId}`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -17,7 +17,7 @@ export const fetchQuiz = async (quizId, setQuiz) => {
 
 export const postScore = async (problemSetId, problemSetName, score, totalQuestions) => {
     try {
-        const response = await fetch('http://localhost:5000/api/scores', { // Adjust the URL as needed
+        const response = await fetch('https://iq-test-server-a6004f555e6a.herokuapp.com/api/scores', { // Adjust the URL as needed
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
