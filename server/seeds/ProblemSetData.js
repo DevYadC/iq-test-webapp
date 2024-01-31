@@ -123,7 +123,7 @@ const problemSets = [
                 answer: 1 // Corresponds to "5/8"
             },
             {
-                question: "The store reduces the price of one product by 20 percent. How many percent do you need to raise to the percentage to get the original price?",
+                question: "A store reduces the price of one product by 20 percent. How many percent do you need to raise to the percentage to get the original price?",
                 options: ["25", "27", "30", "35"],
                 answer: 0 // Corresponds to "25"
             },
@@ -133,7 +133,7 @@ const problemSets = [
                 answer: 0 // Corresponds to "5"
             },
             {
-                question: "There is a lake on the surface of which water lilies float. The number of lilies doubles daily. If it takes 48 days to completely occupy the entire area of the lake, how many days will it take to occupy the floor of the lake?",
+                question: "There is a lake on the surface of which water lilies float. The number of lilies doubles daily. If it takes 48 days to completely occupy the entire area of the lake, on which day did it occupy half the lake?",
                 options: ["47", "46", "96", "108"],
                 answer: 0 // Corresponds to "47"
             },

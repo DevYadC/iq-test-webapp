@@ -7,9 +7,10 @@
     /* Purple glow */
     padding: 20px;
     text-align: center;
-    width: 30%;
+    width: fit-content;
     background-color: #b8b8ff;
     border-radius: 20px;
+    height: fit-content;
 }
 
 
@@ -23,7 +24,7 @@
 
 .title {
     font-family: Arial, sans-serif;
-    font-size: 24px;
+    font-size: clamp(35px, 4vw, 45px);
     font-weight: bold;
     margin-bottom: 20px;
     color: #f8f7ff;
@@ -45,8 +46,9 @@
     text-align: left;
     background-color: #a798ff;
     color: #f8f7ff;
-    font-size: larger;
+    font-size: clamp(25px, 2vw, 30px);
     font-weight: bold;
+    text-wrap: nowrap;
 
 }
 
@@ -61,10 +63,8 @@
 
 }
 
-@media screen and (max-width: 900px) {
-
+@media screen and (max-width: 800px) {
     .container {
-        width: 60%
+        width: fit-content;
     }
-
 }
