@@ -11,7 +11,19 @@ const scoreSchema = new mongoose.Schema({
     },
     score: {
         type: Number,
-        required: true
+        required: true,
+        validate: {
+            validator: async function (value) {
+                // Fetch the problemSet using this.problemSetId
+                const problemSet = await mongoose.model('ProblemSet').findById(this.problemSetId);
+                if (!problemSet) {
+                    return false; // Problem set not found
+                }
+                // Check if the score is within the valid range
+                return value >= 0 && value <= problemSet.questions.length;
+            },
+            message: props => `Score (${props.value}) is out of valid range.`
+        }
     },
 
     recordedAt: {

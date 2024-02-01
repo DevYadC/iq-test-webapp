@@ -8,7 +8,7 @@ import styles from './SelectQuiz.module.css';
 
 export default function SelectQuiz() {
 
-    const [problemSets, setProblemSets] = useState([]);
+    const [problemSets, setProblemSets] = useState();
 
     useEffect(() => {
         const fetchProblemSets = async () => {
@@ -27,6 +27,10 @@ export default function SelectQuiz() {
 
         fetchProblemSets();
     }, []);
+
+    if (!problemSets) {
+        return <div className={styles.loadingContainer}><p className={styles.loading}>Loading Quizzes...</p></div>
+    }
 
     return (
         <div className={styles.selectProblemSet}>

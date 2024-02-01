@@ -129,9 +129,9 @@ function Quiz() {
                             />
 
                             <div className={styles.buttonContainer}>
-                                <Button className={styles.customButton} onClick={previousQuestion} variant='contained'>previous question</Button>
+                                <Button className={styles.customButton} onClick={previousQuestion} variant='contained'>previous</Button>
                                 {currQuestion === quiz.questions.length - 1 ? <Button className={styles.submitButton} onClick={submitTest} variant='contained'>Submit Quiz</Button> : null}
-                                {currQuestion === quiz.questions.length - 1 ? null : <Button className={styles.customButton} onClick={nextQuestion} variant='contained'>next question</Button>}
+                                {currQuestion === quiz.questions.length - 1 ? null : <Button className={styles.customButton} onClick={nextQuestion} variant='contained'>next</Button>}
                             </div>
 
 
@@ -140,7 +140,7 @@ function Quiz() {
                     </div>
 
                 </>
-            ) : null
+            ) : <div className={styles.loadingContainer}><p className={styles.loading}>Loading Questions...</p></div>
             }
 
 

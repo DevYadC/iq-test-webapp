@@ -1,0 +1,23 @@
+.DonatePage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 4%;
+}
+
+.Cards {
+    width: fit-content;
+    max-width: 95%;
+}
+
+
+.CopyButton {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    font-size: x-small;
+    margin-left: 3px;
+    background-color: #eeeeee;
+}

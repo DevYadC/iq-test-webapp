@@ -8,6 +8,31 @@
 .dataContainer {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin: 30px;
+}
+
+.loading {
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.loadingContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+@media (max-width: 1100px) {
+    .dataContainer :nth-child(1) {
+        order: 2;
+    }
+
+    .dataContainer :nth-child(2) {
+        order: 1;
+    }
 }

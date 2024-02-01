@@ -2,25 +2,25 @@
 
 /* Style for the x-axis */
 .MuiChartsAxis-root.MuiChartsAxis-directionX {
-    stroke: white;
+    stroke: white !important;
     /* Changes the color of the x-axis line */
 }
 
 /* Style for the x-axis labels */
 .MuiChartsAxis-root.MuiChartsAxis-directionX .MuiChartsAxis-label {
-    fill: white;
+    fill: white !important;
     /* Changes the color of the x-axis labels */
 }
 
 /* Style for the y-axis */
 .MuiChartsAxis-root.MuiChartsAxis-directionY {
-    stroke: white;
+    stroke: white !important;
     /* Changes the color of the y-axis line */
 }
 
 /* Style for the y-axis labels */
 .MuiChartsAxis-root.MuiChartsAxis-directionY .MuiChartsAxis-label {
-    fill: white;
+    fill: white !important;
     /* Changes the color of the y-axis labels */
 }
 

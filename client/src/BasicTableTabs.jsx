@@ -2,6 +2,7 @@ import * as React from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
+import styles from './BasicTableTabs.module.css';
 
 export default function TabsWrappedLabel({ quizzes, setScores }) {
 
@@ -11,7 +12,7 @@ export default function TabsWrappedLabel({ quizzes, setScores }) {
 
     const fetchScore = async (event, newValue) => {
         try {
-            const response = await fetch(`https://iq-test-server-a6004f555e6a.herokuapp.com/${newValue}`);
+            const response = await fetch(`https://iq-test-server-a6004f555e6a.herokuapp.com/api/scores/${newValue}`);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -25,21 +26,34 @@ export default function TabsWrappedLabel({ quizzes, setScores }) {
 
 
     return (
-        <Box sx={{
+        <div style={{
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            marginTop: '40px'
+            marginTop: '40px',
+            width: '100%'
+
+
         }}>
             <Tabs
+                className={styles.tabs}
                 value={value}
                 onChange={fetchScore}
+                variant="scrollable"
+                scrollButtons
+                allowScrollButtonsMobile
                 aria-label="wrapped label tabs example"
                 sx={{
+                    '.MuiTabs-scrollButtons': {
+                        opacity: '1',
+                        color: 'grey'
+                    },
                     '.MuiTab-root': {
                         color: 'lightgray !important', // Color for unselected tabs
                         fontWeight: 'bold', // Make font bold
-                        fontSize: '1rem', // Increase font size
+                        fontSize: 'clamp(12px, 2vw, 15px)', // Increase font size
+                        maxWidth: "80% !important"
+
                     },
                     '.Mui-selected': {
                         color: '#9381ff !important', // Bright purple color for the selected tab
@@ -52,10 +66,10 @@ export default function TabsWrappedLabel({ quizzes, setScores }) {
             >
                 return <Tab value="" label='All' />
                 {quizzes.map((quiz, index) => {
-                    return <Tab value={quiz.quizId} label={quiz.quizName} />
+                    return <Tab className={styles.tab} value={quiz.quizId} label={quiz.quizName} />
                 })}
 
             </Tabs>
-        </Box>
+        </div>
     );
 }

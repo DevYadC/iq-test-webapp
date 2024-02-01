@@ -15,7 +15,8 @@
     /* Purple glow */
     padding: 20px;
     text-align: center;
-    width: 30%;
+    width: fit-content;
+    max-width: 80%;
     background-color: #b8b8ff;
     border-radius: 20px;
 }
@@ -23,11 +24,13 @@
 .title {
     word-wrap: break-word;
     color: #f8f7ff;
+    font-size: clamp(30px, 2vw, 45px);
+    text-wrap: wrap;
 }
 
 .scoreParagraph {
     word-wrap: break-word;
     color: #f8f7ff;
-    font-size: 25px;
+    font-size: clamp(25px, 2vw, 35px);
     font-weight: bold;
 }

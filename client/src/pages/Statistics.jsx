@@ -40,7 +40,7 @@ export default function () {
 
 
     if (!scores || !quizzes) {
-        return <p>Loading scores...</p>;
+        return <div className={styles.loadingContainer}><p className={styles.loading}>Loading scores...</p></div>;
     }
 
     return (
