@@ -3,11 +3,28 @@
     border: 1px solid #ccc;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1),
         0 0 10px 5px rgba(171, 114, 224, 0.5);
-    height: fit-content;
-    width: fit-content;
+    height: 400px;
+    flex: 1 0 40%;
+    /* Grow to fill available space, don't shrink, start at 50% */
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
+    min-width: 600px;
+
+    /* Adjust as needed */
     border-radius: 10px;
     margin-bottom: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
 
 
     /* Purple glow */
+}
+
+@media screen and (max-width: 600px) {
+    .barChart {
+        min-width: 300px;
+
+
+
+    }
 }

@@ -36,12 +36,15 @@ export default function BasicTable({ scores }) {
         return new Date(dateString).toLocaleDateString('en-US', options);
     };
 
+    const scoresReverse = [...scores].reverse();
+
+
     return (
 
 
 
         <TableContainer component={Paper} className={styles.tableContainer}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <Table sx={{ minWidth: 20 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
                         {!isSmallScreen && <TableCell className={styles.headerCell}>Data ID</TableCell>}
@@ -51,7 +54,7 @@ export default function BasicTable({ scores }) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {scores.map((score) => (
+                    {scoresReverse.map((score) => (
                         <TableRow
                             key={score._id}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
