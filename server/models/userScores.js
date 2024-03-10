@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
+const mongoose=require('mongoose');
 
-const scoreSchema = new mongoose.Schema({
+const scoreSchema=new mongoose.Schema({
     problemSetId: {
-        type: mongoose.Schema.Types.ObjectId, // Reference to the Problem Set
+        type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'ProblemSet'
     },
@@ -14,13 +14,11 @@ const scoreSchema = new mongoose.Schema({
         required: true,
         validate: {
             validator: async function (value) {
-                // Fetch the problemSet using this.problemSetId
-                const problemSet = await mongoose.model('ProblemSet').findById(this.problemSetId);
+                const problemSet=await mongoose.model('ProblemSet').findById(this.problemSetId);
                 if (!problemSet) {
-                    return false; // Problem set not found
+                    return false;
                 }
-                // Check if the score is within the valid range
-                return value >= 0 && value <= problemSet.questions.length;
+                return value>=0&&value<=problemSet.questions.length;
             },
             message: props => `Score (${props.value}) is out of valid range.`
         }
@@ -36,7 +34,7 @@ const scoreSchema = new mongoose.Schema({
     },
 });
 
-const Score = mongoose.model('Score', scoreSchema);
+const Score=mongoose.model('Score', scoreSchema);
 
-module.exports = Score;
+module.exports=Score;
 

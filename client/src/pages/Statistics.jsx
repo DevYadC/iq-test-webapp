@@ -7,23 +7,23 @@ import styles from '../Statistics.module.css';
 export default function () {
 
 
-    const [scores, setScores] = useState()
-    const [quizzes, setQuizzes] = useState();
+    const [scores, setScores]=useState()
+    const [quizzes, setQuizzes]=useState();
 
 
 
     useEffect(() => {
-        const fetchScores = async () => {
+        const fetchScores=async () => {
             try {
-                const response = await fetch('https://iq-test-server-a6004f555e6a.herokuapp.com/api/scores');
+                const response=await fetch('https://iq-test-server-a6004f555e6a.herokuapp.com/api/scores');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                const data = await response.json();
+                const data=await response.json();
 
-                const uniqueQuizIds = [...new Set(data.map(obj => obj.problemSetId))];
-                const uniqueQuizNames = [...new Set(data.map(obj => obj.problemSetName))];
-                const uniqueQuizzes = uniqueQuizIds.map((id, index) => ({ quizId: id, quizName: uniqueQuizNames[index] }));
+                const uniqueQuizIds=[...new Set(data.map(obj => obj.problemSetId))];
+                const uniqueQuizNames=[...new Set(data.map(obj => obj.problemSetName))];
+                const uniqueQuizzes=uniqueQuizIds.map((id, index) => ({ quizId: id, quizName: uniqueQuizNames[index] }));
 
                 setQuizzes(uniqueQuizzes);
 
@@ -39,7 +39,7 @@ export default function () {
 
 
 
-    if (!scores || !quizzes) {
+    if (!scores||!quizzes) {
         return <div className={styles.loadingContainer}><p className={styles.loading}>Loading scores...</p></div>;
     }
 

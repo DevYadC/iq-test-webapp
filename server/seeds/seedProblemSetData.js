@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
-const ProblemSet = require('../models/ProblemSets');
-const problemSets = require('./ProblemSetData'); // The data created in step 2
+const mongoose=require('mongoose');
+const ProblemSet=require('../models/ProblemSets');
+const problemSets=require('./ProblemSetData');
 require('dotenv').config({ path: '../../.env' });
 
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -9,8 +9,8 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
 
 
 
-const seedDB = async () => {
-    await ProblemSet.deleteMany({}); // Clear existing data
+const seedDB=async () => {
+    await ProblemSet.deleteMany({});
     await ProblemSet.insertMany(problemSets);
     console.log('Database seeded!');
 };
