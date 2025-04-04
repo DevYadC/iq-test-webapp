@@ -1,8 +1,6 @@
 .tableContainer {
     flex: 1 0 50%;
-    /* Grow to fill available space, don't shrink, start at 50% */
     box-sizing: border-box;
-    /* Include padding and border in the element's total width and height */
     min-width: 600px;
 
     height: 600px !important;

@@ -26,7 +26,7 @@ function DonatePage() {
                             <Card.Title style={{ color: 'orange', fontWeight: 'bold' }}>Bitcoin</Card.Title>
                             <Card.Text style={{ fontSize: '15px' }}>
                                 bc1qagsvrqt7s8ysjjle6rld8jn5n63m8dl3jjp787
-                                <Button className='CopyButton' variant="outline-secondary" size="sm" onClick={() => copyToClipboard('bc1q6l08rtj6j907r2een0jqs6l7qnruwyxfshmf8a')}>
+                                <Button className='CopyButton' variant="outline-secondary" size="sm" onClick={() => copyToClipboard('bc1qrhmkvu50q2k8z9zj07h6mj4x4spa094lc0rzp8')}>
                                     Copy
                                 </Button>
                             </Card.Text>
