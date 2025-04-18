@@ -2,7 +2,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import QuizQuestionOptions from '../QuizQuestionOptions';
-import styles from '../Quiz.module.css';
+import styles from '../styles/Quiz.module.css';
 
 import { fetchQuiz, postScore, quizScore } from '../utils/quizUtils';
 

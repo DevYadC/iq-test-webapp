@@ -1,6 +1,6 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import styles from './CustomNavbar.module.css'; // Import custom styles
+import styles from './styles/CustomNavbar.module.css'; // Import custom styles
 
 export default function CustomNavbar() {
 

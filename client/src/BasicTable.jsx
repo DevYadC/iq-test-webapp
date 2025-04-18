@@ -9,17 +9,17 @@ import Paper from '@mui/material/Paper';
 import Chip from '@mui/material/Chip';
 import { useState, useEffect } from 'react';
 
-import styles from './BasicTable.module.css';
+import styles from './styles/BasicTable.module.css';
 
 
 
 export default function BasicTable({ scores }) {
 
 
-    const [isSmallScreen, setIsSmallScreen] = useState(false);
+    const [isSmallScreen, setIsSmallScreen]=useState(false);
 
-    const checkScreenSize = () => {
-        setIsSmallScreen(window.innerWidth < 800);
+    const checkScreenSize=() => {
+        setIsSmallScreen(window.innerWidth<800);
     };
 
     useEffect(() => {
@@ -31,12 +31,12 @@ export default function BasicTable({ scores }) {
         };
     }, []);
 
-    const formatDate = (dateString) => {
-        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', timeZoneName: 'short', hour12: true };
+    const formatDate=(dateString) => {
+        const options={ year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', timeZoneName: 'short', hour12: true };
         return new Date(dateString).toLocaleDateString('en-US', options);
     };
 
-    const scoresReverse = [...scores].reverse();
+    const scoresReverse=[...scores].reverse();
 
 
     return (
@@ -47,7 +47,7 @@ export default function BasicTable({ scores }) {
             <Table sx={{ minWidth: 20 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                        {!isSmallScreen && <TableCell className={styles.headerCell}>Data ID</TableCell>}
+                        {!isSmallScreen&&<TableCell className={styles.headerCell}>Data ID</TableCell>}
                         <TableCell align="right" className={styles.headerCell}>Test Name</TableCell>
                         <TableCell align="right" className={styles.headerCell}>Score</TableCell>
                         <TableCell align="right" className={styles.headerCell}>Recorded At</TableCell>
@@ -59,7 +59,7 @@ export default function BasicTable({ scores }) {
                             key={score._id}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
-                            {!isSmallScreen && (
+                            {!isSmallScreen&&(
                                 <TableCell component="th" scope="row" className={styles.tableCell}>
                                     {score._id}
                                 </TableCell>

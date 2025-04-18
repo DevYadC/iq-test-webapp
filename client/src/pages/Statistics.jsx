@@ -3,7 +3,7 @@ import BasicTable from '../BasicTable'
 import TabsWrappedLabel from '../BasicTableTabs';
 //import BasicButtonGroup from '../ButtonGroup';
 import BarChart from '../BarChart'
-import styles from '../Statistics.module.css';
+import styles from '../styles/Statistics.module.css';
 export default function () {
 
 

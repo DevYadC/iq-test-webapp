@@ -15,8 +15,7 @@ function DonatePage() {
             fluid
             style={{
                 minHeight: '100vh',
-                backgroundColor: '#000',
-                padding: '20px'
+                padding: '40px'
             }}
         >
             {/* 1) align-items-stretch ensures all columns match height. 

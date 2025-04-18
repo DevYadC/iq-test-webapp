@@ -1,6 +1,6 @@
 
 import { BarChart } from '@mui/x-charts/BarChart';
-import styles from './BarChart.module.css';
+import styles from './styles/BarChart.module.css';
 
 export default function BasicBars({ scores }) {
 

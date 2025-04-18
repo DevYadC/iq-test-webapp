@@ -2,21 +2,21 @@ import * as React from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import styles from './BasicTableTabs.module.css';
+import styles from './styles/BasicTableTabs.module.css';
 
 export default function TabsWrappedLabel({ quizzes, setScores }) {
 
-    const [value, setValue] = React.useState('one');
+    const [value, setValue]=React.useState('one');
 
 
 
-    const fetchScore = async (event, newValue) => {
+    const fetchScore=async (event, newValue) => {
         try {
-            const response = await fetch(`https://iq-test-server-a6004f555e6a.herokuapp.com/api/scores/${newValue}`);
+            const response=await fetch(`https://iq-test-server-a6004f555e6a.herokuapp.com/api/scores/${newValue}`);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-            const data = await response.json();
+            const data=await response.json();
             setScores(data);
             setValue(newValue)
         } catch (err) {

@@ -1,14 +1,14 @@
 import React from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 
-import styles from '../QuizResult.module.css';
+import styles from '../styles/QuizResult.module.css';
 
 function QuizResult() {
 
-    let { id } = useParams();
+    let { id }=useParams();
 
-    const location = useLocation();
-    const { score, total, name } = location.state;
+    const location=useLocation();
+    const { score, total, name }=location.state;
 
     return (
         <div className={styles.parentContainer}>

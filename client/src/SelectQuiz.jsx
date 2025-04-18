@@ -2,22 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 
-import styles from './SelectQuiz.module.css';
+import styles from './styles/SelectQuiz.module.css';
 
 
 
 export default function SelectQuiz() {
 
-    const [problemSets, setProblemSets] = useState();
+    const [problemSets, setProblemSets]=useState();
 
     useEffect(() => {
-        const fetchProblemSets = async () => {
+        const fetchProblemSets=async () => {
             try {
-                const response = await fetch('https://iq-test-server-a6004f555e6a.herokuapp.com/api/problemsets');
+                const response=await fetch('https://iq-test-server-a6004f555e6a.herokuapp.com/api/problemsets');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                const data = await response.json();
+                const data=await response.json();
 
                 setProblemSets(data);
             } catch (err) {
